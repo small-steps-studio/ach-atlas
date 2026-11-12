@@ -1,0 +1,716 @@
+{
+  "v01-ppd-credits.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": []
+  },
+  "v02-ppd-debits-addenda.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": []
+  },
+  "v03-ccd-mixed.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": []
+  },
+  "v04-ctx-addenda.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": []
+  },
+  "v05-web-debits.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": []
+  },
+  "v06-tel-debits.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": []
+  },
+  "v07-iat.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": []
+  },
+  "v08-five-batches.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": []
+  },
+  "v09-prenotes.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": []
+  },
+  "v10-zero-dollar.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": []
+  },
+  "v11-returns.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": []
+  },
+  "v12-cor.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": [
+      "ACH-SEC-NOT-CHECKED"
+    ]
+  },
+  "v13-crlf.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": []
+  },
+  "v14-unwrapped.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": [
+      "ACH-UNWRAPPED"
+    ]
+  },
+  "v15-exactly-ten.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": []
+  },
+  "v16-loan.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": []
+  },
+  "v17-savings-gl.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": []
+  },
+  "v18-large-amounts.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": []
+  },
+  "v19-hash-overflow.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": []
+  },
+  "v20-pos.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": [
+      "ACH-SEC-NOT-CHECKED"
+    ]
+  },
+  "v21-arc.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": [
+      "ACH-SEC-NOT-CHECKED"
+    ]
+  },
+  "v22-no-final-newline.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": []
+  },
+  "v23-weekend.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": [
+      "ACH-EFFECTIVE-DATE-WEEKEND"
+    ]
+  },
+  "v24-iat-optional-addenda.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": []
+  },
+  "v25-discretionary.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": []
+  },
+  "v26-on-us.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": []
+  },
+  "v27-web-credit.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": []
+  },
+  "v28-ccd-addenda.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": []
+  },
+  "e01-short-header.ach": {
+    "errors": [
+      "ACH-RECORD-LENGTH"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e02-long-entry.ach": {
+    "errors": [
+      "ACH-RECORD-LENGTH"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e03-unknown-type.ach": {
+    "errors": [
+      "ACH-RECORD-TYPE"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e04-accent.ach": {
+    "errors": [
+      "ACH-CHARACTERS"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e05-tab.ach": {
+    "errors": [
+      "ACH-CHARACTERS"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e06-no-header.ach": {
+    "errors": [
+      "ACH-FILE-HEADER-MISSING"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e07-no-file-control.ach": {
+    "errors": [
+      "ACH-FILE-CONTROL-MISSING"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e08-no-batch-control.ach": {
+    "errors": [
+      "ACH-BATCH-CONTROL-MISSING"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e09-entry-outside.ach": {
+    "errors": [
+      "ACH-RECORD-ORDER"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e10-orphan-addenda.ach": {
+    "errors": [
+      "ACH-RECORD-ORDER"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e11-after-control.ach": {
+    "errors": [
+      "ACH-AFTER-FILE-CONTROL"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e12-filler-before-control.ach": {
+    "errors": [
+      "ACH-RECORD-ORDER"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e13-second-header.ach": {
+    "errors": [
+      "ACH-RECORD-ORDER"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e14-blank-line.ach": {
+    "errors": [],
+    "warnings": [
+      "ACH-BLANK-LINE"
+    ],
+    "notes": []
+  },
+  "e15-bom.ach": {
+    "errors": [],
+    "warnings": [
+      "ACH-BOM"
+    ],
+    "notes": []
+  },
+  "e16-no-filler.ach": {
+    "errors": [],
+    "warnings": [
+      "ACH-BLOCKING"
+    ],
+    "notes": []
+  },
+  "e17-extra-filler.ach": {
+    "errors": [],
+    "warnings": [
+      "ACH-BLOCKING"
+    ],
+    "notes": []
+  },
+  "e18-priority.ach": {
+    "errors": [
+      "ACH-CONSTANT-FIELD"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e19-record-size.ach": {
+    "errors": [
+      "ACH-CONSTANT-FIELD"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e20-format-code.ach": {
+    "errors": [
+      "ACH-CONSTANT-FIELD"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e21-destination-check-digit.ach": {
+    "errors": [
+      "ACH-DESTINATION"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e22-destination-form.ach": {
+    "errors": [],
+    "warnings": [
+      "ACH-DESTINATION-FORM"
+    ],
+    "notes": []
+  },
+  "e23-origin-blank.ach": {
+    "errors": [
+      "ACH-ORIGIN"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e24-creation-date.ach": {
+    "errors": [
+      "ACH-DATE"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e25-creation-time.ach": {
+    "errors": [],
+    "warnings": [
+      "ACH-TIME"
+    ],
+    "notes": []
+  },
+  "e26-file-id-modifier.ach": {
+    "errors": [
+      "ACH-FILE-ID-MODIFIER"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e27-service-class.ach": {
+    "errors": [
+      "ACH-SERVICE-CLASS"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e28-service-class-mismatch.ach": {
+    "errors": [
+      "ACH-SERVICE-CLASS-MISMATCH"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e29-debit-in-credit-batch.ach": {
+    "errors": [
+      "ACH-SERVICE-CLASS-ENTRY"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e30-sec-unknown.ach": {
+    "errors": [
+      "ACH-SEC-CODE"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e31-tel-credit.ach": {
+    "errors": [
+      "ACH-SEC-DIRECTION"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e32-company-name.ach": {
+    "errors": [
+      "ACH-COMPANY-NAME"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e33-company-id.ach": {
+    "errors": [
+      "ACH-COMPANY-ID"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e34-company-id-mismatch.ach": {
+    "errors": [
+      "ACH-COMPANY-ID-MISMATCH"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e35-description.ach": {
+    "errors": [
+      "ACH-ENTRY-DESCRIPTION"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e36-effective-invalid.ach": {
+    "errors": [
+      "ACH-EFFECTIVE-DATE"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e37-effective-past.ach": {
+    "errors": [],
+    "warnings": [
+      "ACH-EFFECTIVE-DATE-PAST"
+    ],
+    "notes": []
+  },
+  "e38-effective-far.ach": {
+    "errors": [],
+    "warnings": [
+      "ACH-EFFECTIVE-DATE-FAR"
+    ],
+    "notes": []
+  },
+  "e39-originator-status.ach": {
+    "errors": [
+      "ACH-ORIGINATOR-STATUS"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e40-odfi-mismatch.ach": {
+    "errors": [
+      "ACH-ODFI-MISMATCH"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e41-batch-number-mismatch.ach": {
+    "errors": [
+      "ACH-BATCH-NUMBER-MISMATCH"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e42-batch-number-order.ach": {
+    "errors": [],
+    "warnings": [
+      "ACH-BATCH-NUMBER-ORDER"
+    ],
+    "notes": []
+  },
+  "e43-batch-number-duplicate.ach": {
+    "errors": [
+      "ACH-BATCH-NUMBER-DUPLICATE"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e44-iat-fx.ach": {
+    "errors": [
+      "ACH-IAT-FIELD"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e45-empty-batch.ach": {
+    "errors": [],
+    "warnings": [
+      "ACH-EMPTY-BATCH"
+    ],
+    "notes": []
+  },
+  "e46-transaction-code.ach": {
+    "errors": [
+      "ACH-TRANSACTION-CODE"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e47-rdfi-check-digit.ach": {
+    "errors": [
+      "ACH-RDFI-CHECK-DIGIT"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e48-rdfi-not-digits.ach": {
+    "errors": [
+      "ACH-FIELD-NUMERIC"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e49-account-blank.ach": {
+    "errors": [
+      "ACH-ACCOUNT"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e50-amount-letters.ach": {
+    "errors": [
+      "ACH-AMOUNT"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e51-prenote-amount.ach": {
+    "errors": [
+      "ACH-AMOUNT-PRENOTE"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e52-live-zero.ach": {
+    "errors": [],
+    "warnings": [
+      "ACH-AMOUNT-ZERO"
+    ],
+    "notes": []
+  },
+  "e53-name-blank.ach": {
+    "errors": [],
+    "warnings": [
+      "ACH-NAME"
+    ],
+    "notes": []
+  },
+  "e54-web-payment-type.ach": {
+    "errors": [],
+    "warnings": [
+      "ACH-WEB-PAYMENT-TYPE"
+    ],
+    "notes": []
+  },
+  "e55-indicator-without-addenda.ach": {
+    "errors": [
+      "ACH-ADDENDA-INDICATOR"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e56-addenda-without-indicator.ach": {
+    "errors": [
+      "ACH-ADDENDA-INDICATOR"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e57-tel-addenda.ach": {
+    "errors": [
+      "ACH-ADDENDA-COUNT",
+      "ACH-ADDENDA-TYPE"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e58-two-addenda-ppd.ach": {
+    "errors": [
+      "ACH-ADDENDA-COUNT"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e59-ctx-count.ach": {
+    "errors": [
+      "ACH-ADDENDA-COUNT"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e60-addenda-sequence.ach": {
+    "errors": [
+      "ACH-ADDENDA-SEQUENCE"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e61-entry-detail-sequence.ach": {
+    "errors": [
+      "ACH-ADDENDA-SEQUENCE"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e62-iat-order.ach": {
+    "errors": [
+      "ACH-IAT-ADDENDA-ORDER"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e63-trace-odfi.ach": {
+    "errors": [],
+    "warnings": [
+      "ACH-TRACE-ODFI"
+    ],
+    "notes": []
+  },
+  "e64-trace-order.ach": {
+    "errors": [],
+    "warnings": [
+      "ACH-TRACE-ORDER"
+    ],
+    "notes": []
+  },
+  "e65-trace-duplicate.ach": {
+    "errors": [
+      "ACH-TRACE-DUPLICATE"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e66-batch-count.ach": {
+    "errors": [
+      "ACH-BATCH-COUNT"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e67-batch-hash.ach": {
+    "errors": [
+      "ACH-BATCH-HASH"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e68-batch-debits.ach": {
+    "errors": [
+      "ACH-BATCH-DEBITS"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e69-batch-credits.ach": {
+    "errors": [
+      "ACH-BATCH-CREDITS"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e70-file-batch-count.ach": {
+    "errors": [
+      "ACH-FILE-BATCH-COUNT"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e71-file-block-count.ach": {
+    "errors": [
+      "ACH-FILE-BLOCK-COUNT"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e72-file-entry-count.ach": {
+    "errors": [
+      "ACH-FILE-ENTRY-COUNT"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e73-file-hash.ach": {
+    "errors": [
+      "ACH-FILE-HASH"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e74-file-debits.ach": {
+    "errors": [
+      "ACH-FILE-DEBITS"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e75-file-credits.ach": {
+    "errors": [
+      "ACH-FILE-CREDITS"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e76-reserved.ach": {
+    "errors": [],
+    "warnings": [
+      "ACH-RESERVED"
+    ],
+    "notes": []
+  },
+  "e77-count-letters.ach": {
+    "errors": [
+      "ACH-FIELD-NUMERIC"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e78-adv.ach": {
+    "errors": [],
+    "warnings": [],
+    "notes": [
+      "ACH-SEC-NOT-CHECKED"
+    ]
+  },
+  "e79-four-problems.ach": {
+    "errors": [
+      "ACH-BATCH-HASH",
+      "ACH-EFFECTIVE-DATE",
+      "ACH-RDFI-CHECK-DIGIT",
+      "ACH-RECORD-LENGTH"
+    ],
+    "warnings": [],
+    "notes": []
+  },
+  "e80-empty.ach": {
+    "errors": [
+      "ACH-EMPTY-FILE"
+    ],
+    "warnings": [],
+    "notes": []
+  }
+}
