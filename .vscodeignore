@@ -1,0 +1,13 @@
+**
+!package.json
+!README.md
+!CHANGELOG.md
+!LICENSE.txt
+!TERMS.md
+!PRIVACY.md
+!language-configuration.json
+!src/**
+!syntaxes/**
+!media/icon.png
+!media/activity.svg
+!media/walkthrough/**

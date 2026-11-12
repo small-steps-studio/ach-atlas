@@ -1,0 +1,303 @@
+{
+  "name": "ach-atlas",
+  "displayName": "ACH Atlas",
+  "description": "ACH bank payment files: outline, field hover, totals, problems, check digits. Pro: test files, anonymise, compare, export, reports. Works offline; only the licence check uses the network.",
+  "version": "0.1.0",
+  "publisher": "SmallStepsStudio",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "icon": "media/icon.png",
+  "pricing": "Trial",
+  "homepage": "https://github.com/small-steps-studio/ach-atlas#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/small-steps-studio/ach-atlas"
+  },
+  "bugs": {
+    "url": "https://github.com/small-steps-studio/ach-atlas/issues"
+  },
+  "galleryBanner": {
+    "color": "#16324f",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.82.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Linters",
+    "Other"
+  ],
+  "keywords": [
+    "ach",
+    "ach file",
+    "nacha",
+    "nacha file",
+    "ach payments",
+    "bank file",
+    "payment file",
+    "direct deposit",
+    "payroll file",
+    "ach validator",
+    "ach viewer",
+    "entry hash",
+    "routing number",
+    "aba routing",
+    "check digit",
+    "batch control",
+    "fixed width",
+    "94 character",
+    "treasury",
+    "fintech",
+    "payments",
+    "ppd",
+    "ccd",
+    "ctx",
+    "test data",
+    "anonymize",
+    "reconciliation"
+  ],
+  "main": "./src/extension.js",
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": true
+  },
+  "activationEvents": [
+    "onLanguage:plaintext",
+    "workspaceContains:**/*.ach",
+    "workspaceContains:**/*.nacha"
+  ],
+  "scripts": {
+    "test": "node scripts/run-tests.js",
+    "gate": "node scripts/release-gate.js",
+    "vscode:prepublish": "node scripts/release-gate.js --skip-tests",
+    "package": "npx --yes @vscode/vsce package --no-dependencies",
+    "package:local": "node scripts/package-local.js",
+    "check-vsix": "node scripts/check-vsix.js"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "ach",
+        "aliases": ["ACH", "ach"],
+        "extensions": [".ach", ".nacha"],
+        "firstLine": "^101[ 0-9]{2}[ 0-9A-Za-z]{18}[0-9]{6}",
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ach",
+        "scopeName": "source.ach",
+        "path": "./syntaxes/ach.tmLanguage.json"
+      }
+    ],
+    "configurationDefaults": {
+      "[ach]": {
+        "editor.rulers": [94],
+        "editor.wordWrap": "off",
+        "files.trimTrailingWhitespace": false,
+        "files.insertFinalNewline": false,
+        "editor.quickSuggestions": {
+          "other": false,
+          "comments": false,
+          "strings": false
+        }
+      }
+    },
+    "commands": [
+      { "command": "achAtlas.checkFile", "title": "ACH Atlas: Check Current File" },
+      { "command": "achAtlas.copyPath", "title": "ACH Atlas: Copy Field Path At Cursor" },
+      { "command": "achAtlas.goToBatch", "title": "ACH Atlas: Go To Batch" },
+      { "command": "achAtlas.showTotals", "title": "ACH Atlas: Show File Totals" },
+      { "command": "achAtlas.openSample", "title": "ACH Atlas: Open Sample File" },
+      { "command": "achAtlas.openSampleProblems", "title": "ACH Atlas: Open Sample File With Problems" },
+      { "command": "achAtlas.openWalkthrough", "title": "ACH Atlas: Open Getting Started Guide" },
+      { "command": "achAtlas.showDocumentation", "title": "ACH Atlas: Show Documentation" },
+      { "command": "achAtlas.reportProblem", "title": "ACH Atlas: Report A Problem" },
+      { "command": "achAtlas.refreshOutline", "title": "ACH Atlas: Refresh Outline", "icon": "$(refresh)" },
+      { "command": "achAtlas.revealRecord", "title": "ACH Atlas: Reveal Record" },
+      { "command": "achAtlas.buyPro", "title": "ACH Atlas: Buy Pro" },
+      { "command": "achAtlas.enterKey", "title": "ACH Atlas: Enter Licence Key" },
+      { "command": "achAtlas.licenceStatus", "title": "ACH Atlas: Show Licence Status" },
+      { "command": "achAtlas.removeLicence", "title": "ACH Atlas: Remove Licence From This Machine" },
+      { "command": "achAtlas.anonymise", "title": "ACH Atlas: Anonymise File (Pro)" },
+      { "command": "achAtlas.anonymiseFolder", "title": "ACH Atlas: Anonymise Folder (Pro)" },
+      { "command": "achAtlas.generate", "title": "ACH Atlas: Create Test File (Pro)" },
+      { "command": "achAtlas.compare", "title": "ACH Atlas: Compare With Another File (Pro)" },
+      { "command": "achAtlas.exportCsv", "title": "ACH Atlas: Export Entries As CSV (Pro)" },
+      { "command": "achAtlas.exportJson", "title": "ACH Atlas: Export Entries As JSON (Pro)" },
+      { "command": "achAtlas.reconcile", "title": "ACH Atlas: Create Reconciliation Report For A Folder (Pro)" },
+      { "command": "achAtlas.split", "title": "ACH Atlas: Split Into One File Per Batch (Pro)" },
+      { "command": "achAtlas.merge", "title": "ACH Atlas: Merge Files (Pro)" },
+      { "command": "achAtlas.fixControls", "title": "ACH Atlas: Recompute Control Records And Padding (Pro)" }
+    ],
+    "submenus": [
+      { "id": "achAtlas.editorMenu", "label": "ACH Atlas" }
+    ],
+    "menus": {
+      "commandPalette": [
+        { "command": "achAtlas.revealRecord", "when": "false" },
+        { "command": "achAtlas.refreshOutline", "when": "false" },
+        { "command": "achAtlas.checkFile", "when": "editorLangId == ach" },
+        { "command": "achAtlas.copyPath", "when": "editorLangId == ach" },
+        { "command": "achAtlas.goToBatch", "when": "editorLangId == ach" },
+        { "command": "achAtlas.showTotals", "when": "editorLangId == ach" }
+      ],
+      "editor/context": [
+        { "submenu": "achAtlas.editorMenu", "when": "editorLangId == ach", "group": "achAtlas" }
+      ],
+      "achAtlas.editorMenu": [
+        { "command": "achAtlas.copyPath", "group": "1_navigate@1" },
+        { "command": "achAtlas.goToBatch", "group": "1_navigate@2" },
+        { "command": "achAtlas.showTotals", "group": "1_navigate@3" },
+        { "command": "achAtlas.checkFile", "group": "1_navigate@4" },
+        { "command": "achAtlas.fixControls", "group": "2_pro@1" },
+        { "command": "achAtlas.anonymise", "group": "2_pro@2" },
+        { "command": "achAtlas.compare", "group": "2_pro@3" },
+        { "command": "achAtlas.split", "group": "2_pro@4" },
+        { "command": "achAtlas.exportCsv", "group": "2_pro@5" },
+        { "command": "achAtlas.exportJson", "group": "2_pro@6" }
+      ],
+      "explorer/context": [
+        { "command": "achAtlas.reconcile", "when": "explorerResourceIsFolder", "group": "achAtlas@1" },
+        { "command": "achAtlas.anonymiseFolder", "when": "explorerResourceIsFolder", "group": "achAtlas@2" }
+      ],
+      "view/title": [
+        { "command": "achAtlas.refreshOutline", "when": "view == achAtlas.outline", "group": "navigation" }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        { "id": "achAtlas", "title": "ACH Atlas", "icon": "media/activity.svg" }
+      ]
+    },
+    "views": {
+      "achAtlas": [
+        { "id": "achAtlas.outline", "name": "File Outline", "contextualTitle": "ACH Atlas" }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "achAtlas.outline",
+        "contents": "Open an ACH file (.ach, .nacha, or a text file that starts with an ACH file header) to see its batches, entries and addenda here.\n[Open Sample File](command:achAtlas.openSample)\n[Open Sample File With Problems](command:achAtlas.openSampleProblems)\n[Getting Started Guide](command:achAtlas.openWalkthrough)"
+      }
+    ],
+    "walkthroughs": [
+      {
+        "id": "achAtlas.gettingStarted",
+        "title": "Get started with ACH Atlas",
+        "description": "Open a sample ACH file, read every field in a hover, find problems with their codes, follow the totals and try the Pro tools in the free 14-day trial.",
+        "steps": [
+          {
+            "id": "achAtlas.step.openSample",
+            "title": "Open a sample file",
+            "description": "ACH Atlas reads ACH files: 94-character records for the file header, batches, entries, addenda and controls. Open the invented sample to follow along, or open one of your own files.\n[Open Sample File](command:achAtlas.openSample)",
+            "media": { "markdown": "media/walkthrough/open-sample.md" },
+            "completionEvents": ["onCommand:achAtlas.openSample"]
+          },
+          {
+            "id": "achAtlas.step.outline",
+            "title": "Read the outline and hover a field",
+            "description": "The ACH Atlas view lists the batches with their entries and totals. Rest the pointer on any field to see its name, positions, raw value and meaning: amounts with their cents, dates with the weekday, routing numbers with the check digit.\n[Show the Outline](command:workbench.view.extension.achAtlas)",
+            "media": { "markdown": "media/walkthrough/outline.md" },
+            "completionEvents": ["onView:achAtlas.outline"]
+          },
+          {
+            "id": "achAtlas.step.problems",
+            "title": "Find problems",
+            "description": "Open the sample with problems: a shortened record, a wrong check digit, an invalid date and a wrong entry hash appear in the Problems view, each with a code and a message that says what was expected.\n[Open Sample File With Problems](command:achAtlas.openSampleProblems)\n[Check Current File](command:achAtlas.checkFile)",
+            "media": { "markdown": "media/walkthrough/problems.md" },
+            "completionEvents": ["onCommand:achAtlas.openSampleProblems", "onCommand:achAtlas.checkFile"]
+          },
+          {
+            "id": "achAtlas.step.totals",
+            "title": "Follow the totals",
+            "description": "The status bar shows the field at the cursor and the totals of the file, computed from the entries. Go To Batch jumps to a batch; Show File Totals lists every batch.\n[Show File Totals](command:achAtlas.showTotals)\n[Go To Batch](command:achAtlas.goToBatch)",
+            "media": { "markdown": "media/walkthrough/totals.md" },
+            "completionEvents": ["onCommand:achAtlas.showTotals", "onCommand:achAtlas.goToBatch"]
+          },
+          {
+            "id": "achAtlas.step.pro",
+            "title": "Try the Pro tools (14-day trial)",
+            "description": "Create a test file with correct totals, anonymise a file before you share it, recompute the control records, compare two files or report on a folder. The first Pro command starts a free 14-day trial on this computer; no key, account or network is needed.\n[Create Test File](command:achAtlas.generate)\n[Recompute Control Records And Padding](command:achAtlas.fixControls)\n[Show Licence Status](command:achAtlas.licenceStatus)",
+            "media": { "markdown": "media/walkthrough/pro.md" },
+            "completionEvents": ["onCommand:achAtlas.generate", "onCommand:achAtlas.fixControls", "onCommand:achAtlas.licenceStatus"]
+          }
+        ]
+      }
+    ],
+    "configuration": {
+      "title": "ACH Atlas",
+      "properties": {
+        "achAtlas.maxFileSizeMB": {
+          "type": "number",
+          "default": 20,
+          "minimum": 0.1,
+          "maximum": 50,
+          "order": 1,
+          "markdownDescription": "Largest file, in megabytes, that is checked automatically and gets hovers, the outline and symbols. Larger files are checked on demand with **ACH Atlas: Check Current File**."
+        },
+        "achAtlas.maxProblems": {
+          "type": "integer",
+          "default": 1000,
+          "minimum": 1,
+          "maximum": 20000,
+          "order": 2,
+          "markdownDescription": "Largest number of problems listed per file."
+        },
+        "achAtlas.validateOnType": {
+          "type": "boolean",
+          "default": true,
+          "order": 3,
+          "markdownDescription": "Check ACH files while you type (after a short pause). Files above 2 MB are checked when opened and saved."
+        },
+        "achAtlas.hover.enabled": {
+          "type": "boolean",
+          "default": true,
+          "order": 4,
+          "markdownDescription": "Show the field name, positions, raw value and meaning when the pointer rests on a field."
+        },
+        "achAtlas.detectPlainText": {
+          "type": "boolean",
+          "default": true,
+          "order": 5,
+          "markdownDescription": "Switch plain text files (for example `.txt` or `.dat`) to the ACH language when their first record is an ACH file header."
+        },
+        "achAtlas.checks.effectiveDate": {
+          "type": "boolean",
+          "default": true,
+          "order": 6,
+          "markdownDescription": "Report effective entry dates that lie before the file creation date, more than 60 days after it, or on a weekend. Invalid dates are always reported."
+        },
+        "achAtlas.checks.blocking": {
+          "type": "boolean",
+          "default": true,
+          "order": 7,
+          "markdownDescription": "Report files whose record count is not a multiple of ten (missing or extra filler records of nines). Turn off when your bank accepts files without filler."
+        },
+        "achAtlas.reconcile.include": {
+          "type": "string",
+          "default": "**/*.{ach,nacha,txt,dat}",
+          "order": 8,
+          "markdownDescription": "Glob pattern of the files that the folder commands (**Create Reconciliation Report For A Folder**, **Anonymise Folder**) read. Files that do not start with an ACH file header are skipped."
+        },
+        "achAtlas.reconcile.maxFiles": {
+          "type": "integer",
+          "default": 2000,
+          "minimum": 1,
+          "maximum": 20000,
+          "order": 9,
+          "markdownDescription": "Largest number of files the folder commands read."
+        },
+        "achAtlas.export.neutraliseFormulas": {
+          "type": "boolean",
+          "default": true,
+          "order": 10,
+          "markdownDescription": "Put an apostrophe in front of CSV cells that a spreadsheet would run as a formula (a value that starts with `=`, `+`, `-`, `@`, a tab or a carriage return). Turn off only when a program that reads the CSV needs the exact values."
+        }
+      }
+    }
+  }
+}

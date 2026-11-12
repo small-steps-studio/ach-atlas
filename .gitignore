@@ -1,0 +1,17 @@
+node_modules/
+*.vsix
+.vscode-test/
+.env
+*.log
+
+# Working notes (every Markdown file in the top folder except the public ones), audits and the
+# local test harness stay on the author's computer.
+/*.md
+!/README.md
+!/CHANGELOG.md
+!/TERMS.md
+!/PRIVACY.md
+*.local.md
+demo/
+test/.tmp/
+test/smoke/
