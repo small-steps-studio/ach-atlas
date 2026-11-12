@@ -1,0 +1,108 @@
+{
+  "name": "ACH",
+  "scopeName": "source.ach",
+  "patterns": [
+    { "include": "#filler" },
+    { "include": "#fileHeader" },
+    { "include": "#batchHeader" },
+    { "include": "#entry" },
+    { "include": "#addenda" },
+    { "include": "#batchControl" },
+    { "include": "#fileControl" }
+  ],
+  "repository": {
+    "filler": {
+      "match": "^9{94}$",
+      "name": "comment.line.filler.ach"
+    },
+    "fileHeader": {
+      "match": "^(1)(.{2})(.{10})(.{10})(.{6})(.{4})(.)(.{3})(.{2})(.)(.{23})(.{0,23})(.{0,8})",
+      "captures": {
+        "1": { "name": "keyword.control.record-type.ach" },
+        "2": { "name": "comment.ach" },
+        "3": { "name": "entity.name.tag.routing.ach" },
+        "4": { "name": "variable.other.origin.ach" },
+        "5": { "name": "constant.numeric.date.ach" },
+        "6": { "name": "constant.numeric.time.ach" },
+        "7": { "name": "support.type.modifier.ach" },
+        "8": { "name": "comment.ach" },
+        "9": { "name": "comment.ach" },
+        "10": { "name": "comment.ach" },
+        "11": { "name": "string.unquoted.name.ach" },
+        "12": { "name": "variable.other.name.ach" },
+        "13": { "name": "comment.ach" }
+      }
+    },
+    "batchHeader": {
+      "match": "^(5)(.{3})(.{16})(.{20})(.{10})(.{3})(.{10})(.{6})(.{6})(.{3})(.)(.{8})(.{0,7})",
+      "captures": {
+        "1": { "name": "keyword.control.record-type.ach" },
+        "2": { "name": "support.type.service-class.ach" },
+        "3": { "name": "string.unquoted.name.ach" },
+        "4": { "name": "comment.ach" },
+        "5": { "name": "variable.other.company-id.ach" },
+        "6": { "name": "keyword.other.sec.ach" },
+        "7": { "name": "string.unquoted.description.ach" },
+        "8": { "name": "comment.ach" },
+        "9": { "name": "constant.numeric.date.ach" },
+        "10": { "name": "comment.ach" },
+        "11": { "name": "support.type.status.ach" },
+        "12": { "name": "entity.name.tag.routing.ach" },
+        "13": { "name": "constant.numeric.batch-number.ach" }
+      }
+    },
+    "entry": {
+      "match": "^(6)(.{2})(.{8})(.)(.{17})(.{10})(.{15})(.{22})(.{2})(.)(.{0,15})",
+      "captures": {
+        "1": { "name": "keyword.control.record-type.ach" },
+        "2": { "name": "support.type.transaction-code.ach" },
+        "3": { "name": "entity.name.tag.routing.ach" },
+        "4": { "name": "entity.name.function.check-digit.ach" },
+        "5": { "name": "variable.other.account.ach" },
+        "6": { "name": "constant.numeric.amount.ach" },
+        "7": { "name": "string.unquoted.identification.ach" },
+        "8": { "name": "variable.other.name.ach" },
+        "9": { "name": "comment.ach" },
+        "10": { "name": "support.type.indicator.ach" },
+        "11": { "name": "constant.numeric.trace.ach" }
+      }
+    },
+    "addenda": {
+      "match": "^(7)(.{2})(.{0,91})",
+      "captures": {
+        "1": { "name": "keyword.control.record-type.ach" },
+        "2": { "name": "support.type.addenda-type.ach" },
+        "3": { "name": "string.unquoted.addenda.ach" }
+      }
+    },
+    "batchControl": {
+      "match": "^(8)(.{3})(.{6})(.{10})(.{12})(.{12})(.{10})(.{19})(.{6})(.{8})(.{0,7})",
+      "captures": {
+        "1": { "name": "keyword.control.record-type.ach" },
+        "2": { "name": "support.type.service-class.ach" },
+        "3": { "name": "constant.numeric.count.ach" },
+        "4": { "name": "entity.name.function.hash.ach" },
+        "5": { "name": "constant.numeric.amount.ach" },
+        "6": { "name": "string.unquoted.amount.ach" },
+        "7": { "name": "variable.other.company-id.ach" },
+        "8": { "name": "comment.ach" },
+        "9": { "name": "comment.ach" },
+        "10": { "name": "entity.name.tag.routing.ach" },
+        "11": { "name": "constant.numeric.batch-number.ach" }
+      }
+    },
+    "fileControl": {
+      "match": "^(9)(.{6})(.{6})(.{8})(.{10})(.{12})(.{12})(.{0,39})",
+      "captures": {
+        "1": { "name": "keyword.control.record-type.ach" },
+        "2": { "name": "constant.numeric.count.ach" },
+        "3": { "name": "support.type.count.ach" },
+        "4": { "name": "constant.numeric.count.ach" },
+        "5": { "name": "entity.name.function.hash.ach" },
+        "6": { "name": "constant.numeric.amount.ach" },
+        "7": { "name": "string.unquoted.amount.ach" },
+        "8": { "name": "comment.ach" }
+      }
+    }
+  }
+}
